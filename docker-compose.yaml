@@ -1,0 +1,27 @@
+version: "2.1"
+
+services:
+  php-fpm:
+    container_name: php
+    build: 
+      context: ./php
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 9000:9000
+    volumes_from:
+      - project
+  nginx:
+    container_name: nginx
+    image: nginx
+    restart: always
+    ports:
+      - 80:80
+    volumes_from:
+      - project
+  project:
+    image: busybox
+    container_name: project
+    volumes:
+      - /Users/feilong/data/service/dev-lnmp/project:/usr/share/nginx
+      - /Users/feilong/data/service/dev-lnmp/nginx/conf:/etc/nginx        

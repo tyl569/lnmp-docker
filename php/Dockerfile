@@ -2,7 +2,6 @@ FROM php:7.0-fpm
 RUN apt-get update \
     && apt install libghc-hxt-curl-dev -y \
     && docker-php-ext-install mysqli \
-    && docker-php-ext-install mysql \
     && curl -L -o ./redis-4.1.0.tgz http://pecl.php.net/get/redis-4.1.0.tgz \
     && tar zxvf redis-4.1.0.tgz \
     && cd redis-4.1.0 \

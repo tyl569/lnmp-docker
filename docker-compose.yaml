@@ -23,5 +23,5 @@ services:
     image: busybox
     container_name: project
     volumes:
-      - ~/data/service/dev-lnmp/project:/usr/share/nginx
-      - ~/data/service/dev-lnmp/nginx/conf:/etc/nginx        
+      - ~/data/service/lnmp-docker/project:/usr/share/nginx
+      - ~/data/service/lnmp-docker/nginx/conf:/etc/nginx        
